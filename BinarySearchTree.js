@@ -17,7 +17,7 @@ class bst{
             insertnode(this.root , newnode)
         }
     }
-    insertnode(root , node){
+    function insertnode(root , node){
         if(node.data<root.data){
             if(!root.left){
                 root.left=node
