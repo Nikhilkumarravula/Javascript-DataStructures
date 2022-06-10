@@ -10,7 +10,7 @@ class bst{
         this.root=null
     }
     insert(data){
-        newnode= new Node(data)
+       let newnode= new Node(data)
         if(!this.root){
             this.root=newnode
         }else{
