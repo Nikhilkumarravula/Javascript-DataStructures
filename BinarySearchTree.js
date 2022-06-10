@@ -16,7 +16,6 @@ class bst{
         }else{
             insertnode(this.root , newnode)
         }
-    }
     function insertnode(root , node){
         if(node.data<root.data){
             if(!root.left){
@@ -34,5 +33,34 @@ class bst{
             console.log("data already exists")
         }
     }
+        
+    }
+
+    
+    
+    sumofrange(){
+        let sum=0
+        let kulfi = this.root
+        function sums(kulfi){
+            sum+=kulfi.data
+            if(kulfi.left){
+                sums(kulfi.left)
+            }
+            if(kulfi.right){
+                sums(kulfi.right)
+            }
+            console.log(sum)
+        }
+    }
     
 }
+tree=new bst()
+tree.insert(14)
+tree.insert(13)
+tree.insert(21)
+tree.insert(8)
+tree.insert(54)
+tree.insert(2)
+tree.insert(18)
+tree.insert(9)
+tree.sumofrange()
