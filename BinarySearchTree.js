@@ -38,19 +38,21 @@ class bst{
 
     
     
-    sumofrange(){
+    sumofrange(l,h){
         let sum=0
-        let kulfi = this.root
-        function sums(kulfi){
-            sum+=kulfi.data
-            if(kulfi.left){
-                sums(kulfi.left)
+        let node = this.root
+        sums(node)
+        function sums(node){
+            if(node.data>l&&node.data<h){sum+=node.data}
+            if(node.left){
+                sums(node.left)
             }
-            if(kulfi.right){
-                sums(kulfi.right)
+            if(node.right){
+                sums(node.right)
             }
-            console.log(sum)
+            
         }
+        console.log(sum) 
     }
     
 }
@@ -63,4 +65,4 @@ tree.insert(54)
 tree.insert(2)
 tree.insert(18)
 tree.insert(9)
-tree.sumofrange()
+tree.sumofrange(10,30)
