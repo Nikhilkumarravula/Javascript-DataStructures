@@ -97,7 +97,34 @@ class bst{
         }console.log(a)
     }
 
-    
+    subtree(val){
+        let k= intra(this.root)
+        function subrec(node){
+            let smalltree=new bst()
+            smalltree.root=node
+            return smalltree.root
+        }
+        function intra(node){
+            if(node.data==val){
+                console.log(node.data)
+                console.log(val)
+                return subrec(node)
+         
+            }else{
+                if(node.left){
+                intra(node.left)
+                }
+               if(node.right){
+                intra(node.right)
+               }
+            }
+        }
+        if(k){
+            return k
+        }else{
+            return null
+        }
+    }
     
 }
 
@@ -118,7 +145,7 @@ function ulfa(root) {
             }
             return a
         }
-        console.log(a)
+        //console.log(a)
     let newnode=new Node(0)
     function maketree(index, node) {
     if (index === k.length) {
@@ -146,4 +173,5 @@ tree.sumofrange(10,30)
 tree.inorder()
 tree.preorder()
 tree.postorder()
-console.log(ulfa(tree.root))
+//console.log(ulfa(tree.root))
+console.log(tree.subtree(13))
