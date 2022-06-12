@@ -98,32 +98,38 @@ class bst{
     }
 
     
-    increaseinsert(){
-        intra(this.root)
+    
+}
+
+
+function ulfa(root) {
+ 
+    
+       let a=[]
+        k=intra(root)
         function intra(node){
+            
             if(node.left){
                 intra(node.left)
             }
-            insert(node.data,newnode)
-            //console.log(node)
+             a.push(node.data)
             if(node.right){
                 intra(node.right)
             }
-            function insert(value,newnode){
-                let newnode=new Node(value)
-                if(!this.root){
-                    this.root=newnode
-                }else{
-                    if(!this.root.right){
-                        this.root.right=newnode
-                    }else{
-                        insert(,)
-                    }
-                    
-                }
-            }console.log(a)
+            return a
         }
+        console.log(a)
+    let newnode=new Node(0)
+    function maketree(index, node) {
+    if (index === k.length) {
+      return;
     }
+    node.right = new Node(k[index])
+    maketree(index + 1, node.right)
+    return node.right
+  }
+   return maketree(0,newnode)
+        
 }
 tree=new bst()
 tree.insert(14)
@@ -140,4 +146,4 @@ tree.sumofrange(10,30)
 tree.inorder()
 tree.preorder()
 tree.postorder()
-tree.increaseinsert()
+console.log(ulfa(tree.root))
