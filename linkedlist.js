@@ -23,13 +23,14 @@ class linklist{
         }
     }
     find(val){
-        console.log(1)
         let currentnode =this.head
-        while(currentnode.next){
+        console.log(currentnode.data)
+       while(currentnode){
             if(currentnode.data===val){
-                console.log("true")
+                return true
             }
-        }console.log("false")
+            currentnode=currentnode.next
+        }return false
     }
     
     
@@ -38,8 +39,7 @@ class linklist{
     branch=new linklist()
     branch.add(5)
     branch.add(7)
- //   branch.add(9)
-//    branch.add(20)
+ branch.add(9)
+ branch.add(20)
     console.log(branch)
-    branch.find(7)
-    
+   console.log( branch.find(20))
