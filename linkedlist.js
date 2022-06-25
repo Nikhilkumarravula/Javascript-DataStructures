@@ -24,7 +24,7 @@ class linklist{
     }
     find(val){
         let currentnode =this.head
-        console.log(currentnode.data)
+        
        while(currentnode){
             if(currentnode.data===val){
                 return true
@@ -33,13 +33,36 @@ class linklist{
         }return false
     }
     
+    remove(val){
+        let currentnode =this.head
+        if(currentnode.data===val){
+            this.head=currentnode.next
+            return
+        }else{
+         while(currentnode){
+            if(currentnode.next.data===val){
+                let temp =currentnode.next
+                currentnode.next=temp.next
+                return 
+            }
+            currentnode=currentnode.next
+         }
+        }
+    }
     
-}
+    
+} 
     
     branch=new linklist()
     branch.add(5)
     branch.add(7)
  branch.add(9)
  branch.add(20)
-    console.log(branch)
-   console.log( branch.find(20))
+ branch.add(25)
+  branch.add(45)
+   branch.add(12)
+   console.log( branch.find(9))
+   console.log(branch.head)
+   branch.remove(5)
+   branch.remove(20) 
+   console.log(branch.head)
