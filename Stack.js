@@ -31,16 +31,16 @@ class stack{
         this.size--
     }    
     search(val){
-           
-           function traverse(this.last,data){
-               if(this.last.data===val) return true
-               if(!this.last.next){
-                 return traverse(this.last.next,data)   
+           this.last
+           function traverse(k,data){
+               if(k.data===val) return true
+               if(k.next){
+                 return traverse(k.next,data)   
                 } else{
                     return false
                 }
            }
-           return traverse(this.last,data)
+           return traverse(this.last,val)
 
     }
     
@@ -51,4 +51,4 @@ class stack{
     mystack.push(33)
     mystack.push(65)
     console.log(mystack)
-      console.log(mystack.search(33))
+      console.log(mystack.search(25))
