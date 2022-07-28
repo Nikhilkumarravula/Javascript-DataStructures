@@ -1,32 +1,54 @@
-arr=[]
-count=0
-stack=function(){
-    this.push=function(data){
-        arr.push(data)
-        count++
-    }
-    this.pop=function(){
-        arr.pop()
-        count--
-    }
-    this.peek = function() {
-        return console.log(arr[count-1])
-    }
-    this.size=function(){
-        return console.log(count)
+class node{
+    constructor(data){
+        this.data=data
+        this.next=null
     }
 }
-mystack=new stack()
-mystack.push(12)
-mystack.push(4)
-mystack.push(9)
-mystack.size()
-mystack.push(120)
-mystack.pop()
-mystack.size()
-mystack.push(145)
-mystack.pop()
-mystack.pop()
-mystack.push("free")
-mystack.size()
-mystack.peek()
+
+class stack{
+    constructor(){
+        this.first=null
+        this.last=null
+        this.size=0
+    }
+    
+    push(val){
+        let newnode=new node(val)
+        if(!this.first){
+            this.first=newnode
+            this.last=newnode
+        }else{
+            let temp=this.last
+            this.last=newnode
+            this.last.next=temp
+            }
+            this.size++
+        }
+        
+    pop(){this.last
+        if(!this.last) return null
+        this.last=this.last.next
+        this.size--
+    }    
+    search(val){
+           
+           function traverse(this.last,data){
+               if(this.last.data===val) return true
+               if(!this.last.next){
+                 return traverse(this.last.next,data)   
+                } else{
+                    return false
+                }
+           }
+           return traverse(this.last,data)
+
+    }
+    
+    }
+    
+    let mystack = new stack()
+    mystack.push(25)
+    mystack.push(33)
+    mystack.push(65)
+    console.log(mystack)
+      console.log(mystack.search(33))
