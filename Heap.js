@@ -1,6 +1,6 @@
 class heap{
     constructor(){
-        this.data=[null]
+        this.data=[]
     }
     push(val){
         let i=this.data.length-1
@@ -9,7 +9,7 @@ class heap{
         }else{
             this.data.push(val)
             let key=this.data.length-1
-            while(key>1){
+            while(key>0){
              // this.checkchild(key,key-1)
               this.checkparent(key,Math.floor(key/2))
               key=Math.floor(key/2)
@@ -34,9 +34,9 @@ class heap{
     
     delete(){
         let i=this.data.length-1
-        this.data[1]=this.data[i]
+        this.data[0]=this.data[i]
         this.data.pop()
-        let j=1
+        let j=0
         while(j<i){
             if(2*j<i&&this.data[2*j]>this.data[j]){
                 [this.data[2*j],this.data[j]]=[this.data[j],this.data[2*j]]
