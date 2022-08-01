@@ -67,3 +67,31 @@ h.push(63)
 console.log(h.data)
 h.delete()
 console.log(h.data)
+
+
+
+
+
+/*Heapify algorithm for array*/
+function heapify(arr,n,i){
+    let largest=i
+    let left=2*i
+    let right=(2*i)+1
+    if(left<n && arr[largest]<arr[left]){
+        largest=left
+    }
+    if(right<n && arr[largest]<arr[right]){
+        largest=right
+    }
+    if(largest!=i){
+        [arr[largest],arr[i]]=[arr[i],arr[largest]]
+        heapify(arr,n,largest)
+    }
+    return arr
+}
+let arr=[-1,54,53,55,52,50]
+let n=arr.length-1
+for(let i=Math.floor(n/2);i>0;i--){
+    heapify(arr,n,i)
+}
+console.log(arr)
