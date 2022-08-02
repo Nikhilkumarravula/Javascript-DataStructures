@@ -4,7 +4,7 @@ class heap{
     }
     push(val){
         let i=this.data.length-1
-        if(i<=1){
+        if(i<=0){
             this.data.push(val)
         }else{
             this.data.push(val)
@@ -36,44 +36,11 @@ class heap{
         let i=this.data.length-1
         this.data[0]=this.data[i]
         this.data.pop()
-        let j=0
-        while(j<i){
-            if(2*j<i&&this.data[2*j]>this.data[j]){
-                [this.data[2*j],this.data[j]]=[this.data[j],this.data[2*j]]
-            }else if(2*j+1<i&&this.data[2*j+1]>this.data[j]){
-                [this.data[2*j+1],this.data[j]]=[this.data[j],this.data[2*j+1]]
-            }
-            j++
-        }
-        
-        
+        let n =this.data.length
+        heapify(this.data,n,0)
     }
     
 }
-
-let h=new heap()
-h.push(21)
-h.push(12)
-h.push(29)
-h.push(43)
-h.push(58)
-h.push(2)
-h.push(44)
-h.push(22)
-h.push(99)
-h.push(244)
-h.push(15)
-h.push(63)
-console.log(h.data)
-h.delete()
-console.log(h.data)
-
-
-
-
-
-/*Heapify algorithm for array*/
-
 function heapify(arr,n,i){
     while(i>=0){
         
@@ -93,11 +60,37 @@ function heapify(arr,n,i){
         return
     }
     }
-    
 }
-nums=[3,4,5,2]
-let n=nums.length
-for(let i=Math.floor(n/2);i>=0;i--){
-    heapify(nums,n,i)
-}
-console.log(arr)
+let h=new heap()
+h.push(21)
+h.push(12)
+h.push(29)
+h.push(43)
+h.push(58)
+h.push(2)
+h.push(44)
+h.push(22)
+h.push(99)
+h.push(244)
+h.push(15)
+h.push(63)
+console.log(h.data)
+h.delete()
+console.log(h.data)
+h.delete()
+console.log(h.data)
+
+h.delete()
+console.log(h.data)
+h.delete()
+console.log(h.data)
+h.delete()
+console.log(h.data)
+h.delete()
+console.log(h.data)
+h.delete()
+console.log(h.data)
+h.delete()
+console.log(h.data)
+h.delete()
+console.log(h.data)
